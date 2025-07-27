@@ -1,0 +1,9 @@
+North,John,Jan,12000
+South,Alice,Jan,15000
+North,John,Feb,18000
+South,Alice,Feb,13000
+East,Bob,Jan,10000
+East,Bob,Feb,16000
+North,John,Mar,17000
+South,Alice,Mar,19000
+East,Bob,Mar,14000

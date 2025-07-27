@@ -1,0 +1,241 @@
+The new things for me were:
+
+ls -lh – human readable format on file sizes
+ls -ltr – reverse output order, which is particularly useful when sorting by date
+ls -lS – sort by file size
+ls -R – Recursively list Sub-Directories (can be combined with S for size)
+
+cd -Change Directory [come out of current directory]
+cd.. [come out of parent directory] 	
+touch sovers [-to create an empty file]
+cat>> sovers [write on file name]    ___________    ctrl D [to save]
+vi file name to open an editor...eg vi sove
+pwd [present working directory]
+mv sovers niet_sovers [rename/copy]
+mv niet_sovers /home/sovers/sove    [copy to folder path]
+cat filename   [display file content]
+wc filename [word count on file]
+rm filename [remove file]
+mkdir filename [to make directory]
+mkdir filename1 filename2 [make 2 files]
+mkdir -p phase3/data  [nested folders]
+$ ls
+phase  phase1  phase2  phase3
+We have created the phase3 folder with another folder in it.
+$ cd phase3
+$ ls
+data  [another folder]
+rmdir foldername1 foldername2 [to delete folders]
+$ rmdir phase3
+rmdir: failed to remove 'phase3': Directory not empty
+If there is another file or folder inside, we can use the rm command with “-rf” option.
+
+$ rm -rf sove3
+$ ls
+phase
+
+xdg-open hadoop   [open file or folder ]
+
+If you want to open the file you are currently working in, you can type “.” instead of the folder name.
+
+“.” indicates the current folder
+“..” indicates the parent folder
+
+echo
+The echo command can be considered as print function.
+
+$ echo "Hello"
+Hello
+
+We can also use the echo command to write in a file.
+
+$ echo "The new content" >> file11.txt
+cat sove1.txt or vi sove1.txt
+man [to bring manual for a command]
+man echo   and ctrl z to exit
+
+ls -la [get information with hidden files and directories]
+rm -r filename [to remove a  directory]
+
+ll [to get permissions of all directories & its storage space]
+
+File Permissions
+**************************
+cd te press tab [file name will come by itself]
+chmod ugo filename  [user group and others]
+chmod u+x filename   [x execute permission]
+chmod 441 sove.txt   [to change permission]
+$ chmod ugo+w file1   
+Each digit is computed by adding the associated permissions.
+Read permission is ‘4’, write permission is ‘2’ and execute permission is ‘1’.
+Example: Give read/write/execute permission to the user, read/execute permission to the group, and execute permission to others.
+$ chmod 751 file1
+
+Some file permission examples:
+
+777 - all can read/write/execute (full access).
+755 - owner can read/write/execute, group/others can read/execute.
+644 - owner can read/write, group/others can read only.
+
+Some directory permission examples:
+
+777 - all can read/write/search.
+755 - owner can read/write/search, others and group can only search.
+
+Common permissions settings:
+
+777 - directories with proper permissions on files in directory, use this one very carefully  [all permissions]
+755 - web store folder, CGI scripts
+751 - log folder
+701 - webalizer and modlogan folders
+666 - data files
+644 - configuration files (files not updated by scripts, html, gif,etc...)
+
+Read Here: https://www.multacom.com/faq/password_protection/file_permissions.htm#:~:text=777%20%2D%20all%20can%20read%2Fwrite,can%20read%2Fwrite%2Fsearch.
+
+
+#2) chown: Change ownership of the file.
+
+Description: Only the owner of the file has the right to change the file ownership.
+Syntax: chown [owner] [file]
+Example: Change the owner of file1 to user2 assuming it is currently owned by the current user
+$ chown user2 file1
+#3) chgrp: Change the group ownership of the file
+
+Description: Only the owner of the file has the right to change the file ownership
+Syntax: chgrp [group] [file]
+Example: Change group of file1 to group2 assuming it is currently owned by the current user
+$ chgrp group2 file1
+
+Grep Command [ Go regular expressions print]
+grep is a powerful program for searching through texts i.e searches text files
+grep hello sove.txt
+***********************************************************************************
+vi Editor [Visual Editor] similar to text editor in linux...
+vi sovers_niet.txt    [:w (save), :q (quit), :wq (most imp save quit) ]
+modes --> Command Mode [esc]
+      --> Insert  Mode [i]
+sudo [super user do] [It always give some extra permissions for user or power user]
+ls /
+cd /etc
+etc$ ls [list all files/dir]
+etc$ mkdir sovers [Most cases of permission denied can be solved with sudo cmd as it gives administrative priviledges]
+so
+etc$ sudo mkdir sovers
+or
+etc$ sudo rm -r sovers
+*******************************
+etc$ sudo apt-install gcc or gcc++ [to install software or libraries on the system]
+etc$ sudo -s [To become superuser & execute any command]
+^ shift T [new Terminal]
+top enter [Refresh every 3 sec : Shows all the processes]
+*********************************************************
+pwd
+cd /
+ls
+kill [ to kill some processes in linux]
+*********************************************************
+To Install gcc Compiler....
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt update
+sudo apt upgrade
+sudo apt-get install build-essential
+sudo apt-get install gcc
+*********************************************************
+5 Types of shell in Unix:
+1. Korn Shell (ksh)
+2. Bourne Shell (sh)
+3. Bourne Again Shell (Bash)
+4. C Shell (csh)
+5. TC shell (tsh)
+*********************************************************
+GCC Sample C Program Code:  
+gcc: The GNU Compiler Collection (GCC Compiler) for compilation of programs written in C Language.
+g++ : The GNU C++ compiler for compilation of programs written in C++ Language.
+**********************
+Go to the directory that contains your source code. Use the cd command to change to the directory in which you've saved the source code you want to compile.
+For example, if your source code is in a folder called Documents that's inside your home directory,
+use cd ~/Documents
+sovers@SSB:/$ cd ~/Documents
+Make Project Directory..
+$ mkdir ~/hello
+$ cd ~/hello
+Now create a new C source file (I am going to call it main.c) here with the following
+touch main.c [[ to create a new source file main.c]
+To open the file with:
+nano main.c
+vim main.c
+gedit main.c
+kate main.c
+I am opening with Gedit editor..
+**********************************************
+# include <studio.h>
+int main (void)
+{
+printf("It Works.\n");
+return 0;
+}
+
+*******************************2nd Program Pattern****************************
+#include <stdio.h>
+int main() {
+   int i, j, rows;
+   printf("Enter the number of rows: ");
+   scanf("%d", &rows);
+   for (i = 1; i <= rows; ++i) {
+      for (j = 1; j <= i; ++j) {
+         printf("* ");
+      }
+      printf("\n");
+   }
+   return 0;
+}
+******************************************************************************
+save
+
+$ gcc -o OUTPUT_BINARYSOURCE_FILES
+NOTE: Here, SOURCE_FILES is a whitespace separated list of C source files. The compiled executable file will be saved as OUTPUT_BINARY in your current working directory.
+
+In our case, the main.c source file doesn’t depend on other C source file, so we can compile it with the following command:
+sovers@SSB:~/hello$ gcc hello.c -o hello
+sovers@SSB:~/hello$ ./hello
+ls
+**************************************************************************************************************
+Try Again:
+
+sovers@SSB:~$ mkdir hello
+sovers@SSB:~$ gcc --version
+gcc (Ubuntu 9.4.0-1ubuntu1~20.04.1) 9.4.0
+Copyright (C) 2019 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+sovers@SSB:~$ touch hello.c
+sovers@SSB:~$ rm hello.c
+sovers@SSB:~$ cd hello
+sovers@SSB:~/hello$ touch hello.c
+sovers@SSB:~/hello$ gedit hello.c
+sovers@SSB:~/hello$ gcc hello.c -o hello
+sovers@SSB:~/hello$ ./hello
+Enter the number of rows: 5
+* 
+* * 
+* * * 
+* * * * 
+* * * * * 
+
+_______________
+history [to see list of past 500 commands run on terminal]
+
+
+
+      
+      
+       
+ 
+
+
+
+
+
